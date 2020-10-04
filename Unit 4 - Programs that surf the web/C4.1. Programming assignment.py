@@ -32,13 +32,14 @@ span tag, convert them to integers and add them up to complete the assignment. "
 
 
 import urllib
-from BeautifulSoup import *
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
 
 sample_url = "http://python-data.dr-chuck.net/comments_42.html"
 data_url = "http://python-data.dr-chuck.net/comments_277464.html"
 
 #Getting the html information and parsing it with BeautifulSoup
-html = urllib.urlopen(data_url).read()
+html = urlopen(data_url).read()
 soup = BeautifulSoup(html)
 
 #Getting a list with the "span" tags
